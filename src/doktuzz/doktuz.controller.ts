@@ -4,7 +4,6 @@ import {
    Param,
    Get,
 } from '@nestjs/common';
-//import { GetDoktuzWithRangeDateTimeDto } from './dtos';
 import { DoktuzService } from './doktuz.service';
 import { ApiTags } from '@nestjs/swagger';
 
@@ -20,7 +19,7 @@ export class DoktuzController {
       data,
     }
   }
-  @Get('/allWithRangeDate:startDate/:endDate')
+  @Get('/allWithRangeDate/:startDate&:endDate')
   async getAllWithRangeDate(@Param ('startDate') startDate: Date, @Param ('endDate') endDate: Date) {
     const data = await this.doktuzService.getAllWithRangeDate(startDate,endDate);
     return {
@@ -28,7 +27,7 @@ export class DoktuzController {
       data,
     }
   }
-  @Get('/allWithNameOrCompany:name/:company')
+  @Get('/allWithNameOrCompany/:name&:company')
   async getAllWithNameOrCompany(@Param ('name') name: string, @Param ('company') company: string) {
     const data = await this.doktuzService.getAllWithNameOrCompany(name,company);
     return {
