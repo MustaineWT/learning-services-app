@@ -20,7 +20,7 @@ export class DoktuzController {
     }
   }
   @Get('/allWithRangeDate/:startDate&:endDate')
-  async getAllWithRangeDate(@Param ('startDate') startDate: Date, @Param ('endDate') endDate: Date) {
+  async getAllWithRangeDate(@Param ('startDate') startDate: string, @Param ('endDate') endDate: string) {
     const data = await this.doktuzService.getAllWithRangeDate(startDate,endDate);
     return {
       message: 'Get all Doktuz with Range Date',

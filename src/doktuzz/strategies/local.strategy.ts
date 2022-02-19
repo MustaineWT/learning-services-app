@@ -12,7 +12,7 @@ export class LocalStrategy extends PassportStrategy(Strategy){
     });
   }
 
-  async getAllWithRangeDate(startDate: Date, endDate: Date) {
+  async getAllWithRangeDate(startDate: string, endDate: string) {
     const data = await this.doktuzService.getAllWithRangeDate(startDate, endDate);
     if (!data)
       throw new UnauthorizedException('Data not range information.');
