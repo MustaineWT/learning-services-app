@@ -11,6 +11,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Se implementa el config antes que el logger,
+  app.enableCors(); 
+  
   // para poder saber el entorno en el que nos encontramos.
   const config = app.get(ConfigService);
   const logger = new Logger(config.get<string>('NODE_ENV').toUpperCase());
