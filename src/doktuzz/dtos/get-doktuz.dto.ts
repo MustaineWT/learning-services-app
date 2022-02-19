@@ -1,6 +1,6 @@
 import { IsDate, IsInt, IsString } from "class-validator";
 
-export class GetDoktuzWithRangeDateTimeDto {
+export class GetDoktuzDto {
   @IsString()
   codigo: string;
   @IsDate()
