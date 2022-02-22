@@ -9,7 +9,7 @@ export class DoktuzService {
         @InjectRepository(Doktuz)
         private readonly doktuzRepository: Repository<Doktuz>
     ) { }
-    async getAll(): Promise<Doktuz[]> {
+    async getAll() {
         return await this.doktuzRepository.find();
     }
     async getAllWithRangeDate(startDate: string, endDate: string): Promise<Doktuz[]> {
