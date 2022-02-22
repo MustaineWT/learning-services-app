@@ -20,6 +20,6 @@ export class DoktuzService {
     }
     async getAllWithNameOrCompany(name: string, company: string): Promise<Doktuz[]> {
         return await this.doktuzRepository.find()    
-        .then(doktuz => doktuz.filter(d => d.paciente === name || d.empresa === company));
+        .then(doktuz => doktuz.filter(d =>  d.paciente.indexOf(name)>=0  || d.empresa.indexOf(company)>=0));
     }
 }
